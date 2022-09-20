@@ -1,28 +1,44 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <SideNav />
+    <MusicPlayer />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MusicPlayer from "./components/MusicPlayer.vue";
+import SideNav from "./components/SideNav.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    MusicPlayer,
+    SideNav,
+  },
+};
 </script>
 
 <style>
+* {
+  padding: 0 0;
+  margin: 0 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+:root {
+  --inactive-color: #bababa;
+  --hover-color: white;
+  --theme-active-color: #1ed760;
+}
+svg {
+  min-width: 32px;
+  color: var(--inactive-color);
+}
+svg:hover {
+  color: var(--hover-color);
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: black;
 }
 </style>

@@ -30,7 +30,7 @@ import IconPause from "../icons/IconPause.vue";
 import IconPlay from "../icons/IconPlay.vue";
 import IconFwd from "../icons/IconFwd.vue";
 import IconRepeat from "../icons/IconRepeat.vue";
-import ProgressBar from "../common/ProgressBar.vue";
+import ProgressBar from "./ProgressBar.vue";
 export default {
   name: "track-controller",
   props: {

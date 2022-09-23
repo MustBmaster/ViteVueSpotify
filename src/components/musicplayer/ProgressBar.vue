@@ -30,11 +30,10 @@ input[type="range"] {
   background-color: #5e5e5e;
   background-image: linear-gradient(white, white);
   background-repeat: no-repeat;
-  background-size: 70% 100%;
+  background-size: 0 100%;
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  /* display: none; */
   width: 12px;
   height: 12px;
   border-radius: 50%;

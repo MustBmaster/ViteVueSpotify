@@ -3,7 +3,7 @@
     <PlayingTrack :props="track" />
     <MusicController
       :play="isPlaying"
-      :trackDuration="audio.duration"
+      :trackDuration="audio.duration ? audio.duration : 0"
       :trackProgress="trackProgress"
       @play-pause="ppHandler"
       @prev="prevHandler"
@@ -18,7 +18,6 @@
 import MusicController from "./musicplayer/MusicController.vue";
 import PlayingTrack from "./musicplayer/PlayingTrack.vue";
 import SideController from "./musicplayer/SideController.vue";
-// import { ref } from "vue";
 import { tracks } from "../track";
 
 export default {
@@ -32,7 +31,6 @@ export default {
       trackIndex: 0,
       volume: 1,
       trackProgress: 0,
-      timer: null,
     };
   },
   methods: {
@@ -60,16 +58,24 @@ export default {
       console.log(this.track);
     },
     startTimer() {
-      clearInterval(this.timer);
-      this.timer = setInterval(() => {
+      clearInterval();
+      setInterval(() => {
         if (this.audio.ended) this.fwdHandler();
         else this.trackProgress = this.audio.currentTime;
       }, 1000);
     },
     progressChange(value) {
       this.audio.currentTime = value;
-      clearInterval(this.timer);
+      clearInterval();
       this.trackProgress = this.audio.currentTime;
+    },
+    volumeChange(value) {
+      this.audio.volume = value;
+    },
+    volumeMute() {
+      if (this.volume === 0) {
+        this.volumeChange(1);
+      } else this.volumeChange(0);
     },
   },
 

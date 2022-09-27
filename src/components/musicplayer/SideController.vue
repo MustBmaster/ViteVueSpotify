@@ -5,9 +5,17 @@
     <IconDevices />
     <div class="volume-bar">
       <div @click="$emit('volume-mute')">
-        <IconVolumeMute />
+        <IconVolumeMute v-if="volume == 0" />
+        <IconVolumeLow v-else-if="volume <= 0.3" />
+        <IconVolumeMed v-else-if="volume <= 0.6" />
+        <IconVolumeHigh v-else />
       </div>
-      <ProgressBar />
+      <ProgressBar
+        :step="0.1"
+        :value="volume"
+        :max="1"
+        @progress-change="handleInputChange"
+      />
     </div>
   </div>
 </template>
@@ -18,6 +26,9 @@ import IconQueue from "../icons/IconQueue.vue";
 import IconDevices from "../icons/IconDevices.vue";
 import IconVolumeMute from "../icons/IconVolumeMute.vue";
 import ProgressBar from "./ProgressBar.vue";
+import IconVolumeLow from "../icons/IconVolumeLow.vue";
+import IconVolumeMed from "../icons/IconVolumeMed.vue";
+import IconVolumeHigh from "../icons/IconVolumeHigh.vue";
 export default {
   name: "SideController",
   props: {
@@ -29,6 +40,14 @@ export default {
     IconDevices,
     IconVolumeMute,
     ProgressBar,
+    IconVolumeLow,
+    IconVolumeMed,
+    IconVolumeHigh,
+  },
+  methods: {
+    handleInputChange: function (value) {
+      this.$emit("volume-change", value);
+    },
   },
 };
 </script>

@@ -1,20 +1,16 @@
 <template>
   <nav class="side-nav">
-    <a href="blank" class="logo">
+    <a href="#" class="logo">
       <img
         src="../assets/logo-and-brand-assets/Spotify_Logo_RGB_White.png"
         alt="logo and brand"
       />
     </a>
     <ul>
-      <li>
-        <NavItem><IconHome />Home</NavItem>
-      </li>
-      <li>
-        <NavItem><IconSearch />Search</NavItem>
-      </li>
-      <li>
-        <NavItem><IconLibrary />Library</NavItem>
+      <li v-for="nav in links" :key="nav.id" @click="$emit('navigate', nav.id)">
+        <NavItem>
+          <component :is="nav.icon"></component> {{ nav.name }}
+        </NavItem>
       </li>
     </ul>
     <div class="user-related">
@@ -38,9 +34,15 @@ import IconFavorite from "./icons/IconFavorite.vue";
 import IconDownload from "./icons/IconDownload.vue";
 export default {
   name: "SideNav",
-  // data() {
-  //   return {};
-  // },
+  data() {
+    return {
+      links: [
+        { id: "HomePage", name: "Home", icon: "IconHome" },
+        { id: "TestPage", name: "Search", icon: "IconSearch" },
+        { id: "Library", name: "Library", icon: "IconLibrary" },
+      ],
+    };
+  },
   components: {
     NavItem,
     IconHome,

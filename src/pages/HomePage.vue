@@ -1,21 +1,22 @@
 <template>
-  <div class="home-page container-fluid">
-    <div class="row">
-      <div class="col-sm-3">.col-sm-3</div>
-      <div class="col-sm-3">.col-sm-3</div>
-      <div class="col-sm-3">.col-sm-3</div>
-      <div class="col-sm-3">.col-sm-3</div>
-    </div>
+  <div class="home-page container-fluid pt-4 px-lg-4 px-sm-3 col gy-4">
+    <SectionHead />
+    <SectionNormal />
   </div>
 </template>
 
 <script>
-export default {};
+import SectionHead from "@/components/homepage/SectionHead.vue";
+import SectionNormal from "@/components/homepage/SectionNormal.vue";
+export default {
+  name: "HomePage",
+  components: { SectionHead, SectionNormal },
+};
 </script>
 
 <style>
 .home-page {
   background-color: var(--page-theme);
-  padding: 24px 32px;
+  height: 200vh;
 }
 </style>

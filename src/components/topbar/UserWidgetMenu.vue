@@ -5,7 +5,7 @@
         {{ item.title }}
         <IconNewPage v-if="item.openNewpage" />
       </li>
-      <hr />
+      <div class="dropdown-divider"></div>
       <li>Log out</li>
     </ul>
   </div>

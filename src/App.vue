@@ -1,9 +1,11 @@
 <template>
   <div class="main">
-    <SideNav />
+    <SideNav @navigate="navigate" />
     <div class="content">
-      <TopBar />
-      <HomePage />
+      <TopBar>Test Tí</TopBar>
+      <div>
+        <component :is="currentView"></component>
+      </div>
     </div>
     <MusicPlayer />
   </div>
@@ -14,14 +16,26 @@ import MusicPlayer from "./components/MusicPlayer.vue";
 import SideNav from "./components/SideNav.vue";
 import TopBar from "./components/TopBar.vue";
 import HomePage from "./pages/HomePage.vue";
+import TestPage from "./pages/TestPage.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      currentView: "HomePage",
+    };
+  },
   components: {
     MusicPlayer,
     SideNav,
     TopBar,
     HomePage,
+    TestPage,
+  },
+  methods: {
+    navigate(value) {
+      this.currentView = value;
+    },
   },
 };
 </script>
@@ -33,12 +47,15 @@ export default {
   box-sizing: border-box;
   font-family: sans-serif;
   font-family: "Open Sans", sans-serif;
+  color: var(--text-nomal-color);
+  text-overflow: ellipsis;
 }
 :root {
   --inactive-color: #bababa;
   --hover-color: white;
   --theme-active-color: #1ed760;
   --page-theme: #121212;
+  --text-nomal-color: #b3b3b3;
 }
 ol,
 ul {
@@ -75,6 +92,19 @@ hr {
   min-height: 1px;
   width: 100%;
   border: none;
+  margin: 0 0;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--hover-color);
+  margin: 0 0 !important;
+}
+img {
+  width: 100%;
+  height: 100%;
 }
 
 ::-webkit-scrollbar {

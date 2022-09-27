@@ -10,7 +10,11 @@
       @fwd="fwdHandler"
       @progress-change="progressChange"
     />
-    <SideController />
+    <SideController
+      @volume-mute="volumeMute"
+      :volume="volume"
+      @volume-change="volumeChange"
+    />
   </div>
 </template>
 
@@ -59,6 +63,7 @@ export default {
     },
     startTimer() {
       clearInterval();
+
       setInterval(() => {
         if (this.audio.ended) this.fwdHandler();
         else this.trackProgress = this.audio.currentTime;
@@ -69,13 +74,14 @@ export default {
       clearInterval();
       this.trackProgress = this.audio.currentTime;
     },
-    volumeChange(value) {
-      this.audio.volume = value;
-    },
     volumeMute() {
+      console.log("test", this.volume);
       if (this.volume === 0) {
-        this.volumeChange(1);
-      } else this.volumeChange(0);
+        this.volume = 1;
+      } else this.volume = 0;
+    },
+    volumeChange(value) {
+      this.volume = value;
     },
   },
 
@@ -101,9 +107,13 @@ export default {
     audio: function (newaudio, oldaudio) {
       if (this.isPlaying) {
         oldaudio.pause();
+        this.audio.volume = this.volume;
         this.startTimer();
         newaudio.play();
       }
+    },
+    volume: function (newvol) {
+      this.audio.volume = newvol;
     },
   },
 };

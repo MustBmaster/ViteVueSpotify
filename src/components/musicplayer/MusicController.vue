@@ -15,6 +15,7 @@
         @progress-change="handleInputChange"
         :min="0"
         :value="trackProgress"
+        :progress="trackProgress"
         :max="trackDuration"
         :step="1"
       />

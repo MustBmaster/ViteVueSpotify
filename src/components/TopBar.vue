@@ -4,7 +4,9 @@
       <NavButton><IconPrevPage /></NavButton>
       <NavButton><IconNextPage /></NavButton>
     </div>
-    <div class="content-wrapper"></div>
+    <div class="content-wrapper">
+      <slot></slot>
+    </div>
     <ButtonUserSetting />
   </div>
 </template>
@@ -16,6 +18,9 @@ import IconPrevPage from "./icons/IconPrevPage.vue";
 import ButtonUserSetting from "./topbar/ButtonUserSetting.vue";
 export default {
   name: "TopBar",
+  props: {
+    currentPage: String,
+  },
   components: { NavButton, IconNextPage, IconPrevPage, ButtonUserSetting },
 };
 </script>
@@ -30,7 +35,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  background: transparent;
+  background: var(--page-theme);
   z-index: 10;
   position: sticky;
   top: 0;

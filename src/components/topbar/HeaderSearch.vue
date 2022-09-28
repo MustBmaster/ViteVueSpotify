@@ -1,25 +1,29 @@
 <template>
   <div class="search-form">
-    <div class="icon-display">
+    <div class="icon left">
       <IconSearch />
+    </div>
+    <div @click="value = ''" v-show="value" class="icon right">
+      <IconX />
     </div>
     <input
       type="text"
       placeholder="What do you want to listen to"
-      v-model="initValue"
+      v-model="value"
     />
   </div>
 </template>
 
 <script>
 import IconSearch from "../icons/IconSearch.vue";
+import IconX from "../icons/IconX.vue";
 export default {
   data() {
     return {
-      initValue: "",
+      value: "",
     };
   },
-  components: { IconSearch },
+  components: { IconSearch, IconX },
 };
 </script>
 
@@ -43,12 +47,17 @@ input {
 input:focus {
   outline: none;
 }
-.icon-display {
+.icon {
   display: flex;
   position: absolute;
-  left: 12px;
   align-items: center;
   height: 40px;
   color: black !important;
+}
+.left {
+  left: 12px;
+}
+.right {
+  right: 12px;
 }
 </style>

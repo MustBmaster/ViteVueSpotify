@@ -69,12 +69,6 @@ ul {
   margin: 0 0 !important;
   padding: 0 0 !important;
 }
-/* svg {
-  color: var(--inactive-color);
-}
-svg:hover {
-  color: var(--hover-color);
-} */
 #app {
   background-color: black;
 }

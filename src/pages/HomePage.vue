@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import SectionHead from "@/components/homepage/SectionHead.vue";
-import SectionNormal from "@/components/homepage/SectionNormal.vue";
+import SectionHead from "@/components/common/SectionHead.vue";
+import SectionNormal from "@/components/common/SectionNormal.vue";
 export default {
   name: "HomePage",
   components: { SectionHead, SectionNormal },

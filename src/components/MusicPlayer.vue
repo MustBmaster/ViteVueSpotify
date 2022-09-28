@@ -119,7 +119,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .music-player {
   height: 90px;
   background-color: #181818;
@@ -135,8 +135,5 @@ export default {
   width: 100%;
   min-width: 620px;
   color: var(--inactive-color);
-}
-svg:hover {
-  color: var(--hover-color);
 }
 </style>

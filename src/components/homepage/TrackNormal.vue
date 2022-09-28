@@ -15,7 +15,7 @@
       </div>
     </div>
     <h6 class="pb-1">Track Name</h6>
-    <Span class="">
+    <Span>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eaque ipsam
       corrupti facere quibusdam consectetur cupiditate ratione a ipsa, vel
       nesciunt saepe, officiis aliquam et iusto ullam veritatis rerum nulla!
@@ -40,11 +40,11 @@ export default {
 .track-normal {
   padding: 16px;
   background: #181818;
+  color: var(--text-nomal-color);
 }
 .track-normal:hover {
   background: #282828;
 }
-
 .btn-pp {
   position: absolute;
   right: 8px;

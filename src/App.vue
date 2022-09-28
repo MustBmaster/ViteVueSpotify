@@ -2,7 +2,10 @@
   <div class="main">
     <SideNav @navigate="navigate" />
     <div class="content">
-      <TopBar>Test Tí</TopBar>
+      <TopBar>
+        <!-- <HeaderHome /> -->
+        <HeaderSearch />
+      </TopBar>
       <div>
         <component :is="currentView"></component>
       </div>
@@ -17,6 +20,8 @@ import SideNav from "./components/SideNav.vue";
 import TopBar from "./components/TopBar.vue";
 import HomePage from "./pages/HomePage.vue";
 import TestPage from "./pages/TestPage.vue";
+import HeaderHome from "./components/topbar/HeaderHome.vue";
+import HeaderSearch from "./components/topbar/HeaderSearch.vue";
 
 export default {
   name: "App",
@@ -31,6 +36,8 @@ export default {
     TopBar,
     HomePage,
     TestPage,
+    HeaderHome,
+    HeaderSearch,
   },
   methods: {
     navigate(value) {
@@ -47,7 +54,6 @@ export default {
   box-sizing: border-box;
   font-family: sans-serif;
   font-family: "Open Sans", sans-serif;
-  color: var(--text-nomal-color);
   text-overflow: ellipsis;
 }
 :root {
@@ -63,12 +69,12 @@ ul {
   margin: 0 0 !important;
   padding: 0 0 !important;
 }
-svg {
+/* svg {
   color: var(--inactive-color);
 }
 svg:hover {
   color: var(--hover-color);
-}
+} */
 #app {
   background-color: black;
 }

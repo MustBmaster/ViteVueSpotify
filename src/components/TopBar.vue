@@ -44,4 +44,7 @@ export default {
   display: flex;
   gap: 16px;
 }
+.content-wrapper {
+  flex-grow: 1;
+}
 </style>

@@ -52,7 +52,6 @@ li {
   height: 40px;
   justify-content: space-between;
   padding: 12px;
-  /* padding-inline-end: 8px; */
   position: relative;
   text-align: start;
   user-select: none;

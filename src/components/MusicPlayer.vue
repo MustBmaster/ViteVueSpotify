@@ -134,5 +134,9 @@ export default {
   z-index: 4;
   width: 100%;
   min-width: 620px;
+  color: var(--inactive-color);
+}
+svg:hover {
+  color: var(--hover-color);
 }
 </style>

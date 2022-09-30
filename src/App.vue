@@ -3,10 +3,11 @@
     <SideNav @navigate="navigate" />
     <div class="content">
       <TopBar>
-        <!-- <HeaderHome /> -->
-        <HeaderSearch />
+        <HeaderHome v-if="currentView == 'HomePage'" />
+        <HeaderSearch v-else-if="currentView == 'SearchPage'" />
+        <HeaderLibrary v-else-if="currentView == 'LibraryPage'" />
       </TopBar>
-      <div>
+      <div class="container-fluid pt-4 px-lg-4 px-sm-3 col gy-4">
         <component :is="currentView"></component>
       </div>
     </div>
@@ -19,9 +20,11 @@ import MusicPlayer from "./components/MusicPlayer.vue";
 import SideNav from "./components/SideNav.vue";
 import TopBar from "./components/TopBar.vue";
 import HomePage from "./pages/HomePage.vue";
-import TestPage from "./pages/TestPage.vue";
 import HeaderHome from "./components/topbar/HeaderHome.vue";
 import HeaderSearch from "./components/topbar/HeaderSearch.vue";
+import SearchPage from "./pages/SearchPage.vue";
+import HeaderLibrary from "./components/topbar/HeaderLibrary.vue";
+import LibraryPage from "./pages/LibraryPage.vue";
 
 export default {
   name: "App",
@@ -35,9 +38,11 @@ export default {
     SideNav,
     TopBar,
     HomePage,
-    TestPage,
     HeaderHome,
     HeaderSearch,
+    SearchPage,
+    HeaderLibrary,
+    LibraryPage,
   },
   methods: {
     navigate(value) {
@@ -108,7 +113,7 @@ img {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
 }
 
 ::-webkit-scrollbar-track {

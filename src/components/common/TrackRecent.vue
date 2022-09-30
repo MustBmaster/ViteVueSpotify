@@ -1,18 +1,20 @@
 <template>
-  <div
-    class="recent-track rounded"
-    @mouseenter="hover = !hover"
-    @mouseleave="hover = !hover"
-  >
-    <div class="custom">
-      <img
-        class="rounded-left"
-        src="https://i.scdn.co/image/ab6761610000e5eb9896fc9a2e28384f2d705c45"
-        alt="test image"
-      />
-      <span>Vũ</span>
+  <div class="col-lg-4 col-md-6">
+    <div
+      class="recent-track rounded"
+      @mouseenter="hover = !hover"
+      @mouseleave="hover = !hover"
+    >
+      <div class="custom">
+        <img
+          src="https://i.scdn.co/image/ab6761610000e5eb9896fc9a2e28384f2d705c45"
+          alt="test image"
+          draggable="false"
+        />
+        <span>Vũ</span>
+      </div>
+      <IconPlayGreen v-show="hover" />
     </div>
-    <IconPlayGreen v-show="hover" />
   </div>
 </template>
 
@@ -38,6 +40,7 @@ export default {
   color: var(--hover-color);
   height: 80px;
   padding-right: 16px;
+  overflow: hidden;
 }
 .recent-track:hover {
   background-color: #3a4444;
@@ -46,7 +49,6 @@ export default {
 img {
   height: 80px;
   width: 80px;
-  border-radius: 4px;
 }
 .custom {
   display: flex;

@@ -13,6 +13,7 @@ export default {};
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  color: var(--text-nomal-color);
 }
 .btn-upgrade {
   box-sizing: border-box;
@@ -27,6 +28,7 @@ export default {};
   align-items: center;
   justify-content: center;
   background-color: transparent;
+  cursor: pointer;
 }
 .btn-upgrade:hover {
   background: black;

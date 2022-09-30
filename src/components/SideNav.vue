@@ -38,8 +38,8 @@ export default {
     return {
       links: [
         { id: "HomePage", name: "Home", icon: "IconHome" },
-        { id: "TestPage", name: "Search", icon: "IconSearch" },
-        { id: "Library", name: "Library", icon: "IconLibrary" },
+        { id: "SearchPage", name: "Search", icon: "IconSearch" },
+        { id: "LibraryPage", name: "Library", icon: "IconLibrary" },
       ],
     };
   },

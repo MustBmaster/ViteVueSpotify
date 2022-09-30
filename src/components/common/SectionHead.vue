@@ -1,24 +1,12 @@
 <template>
-  <div class="row gx-4 gy-3 recent-tracks container-fluid m-0 p-0">
+  <div class="row gx-4 gy-3 recent-tracks container-fluid m-0 p-0 mb-4">
     <h2>Good Morning</h2>
-    <div class="col-lg-4 col-md-6">
-      <TrackRecent />
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <TrackRecent />
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <TrackRecent />
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <TrackRecent />
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <TrackRecent />
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <TrackRecent />
-    </div>
+    <TrackRecent />
+    <TrackRecent />
+    <TrackRecent />
+    <TrackRecent />
+    <TrackRecent />
+    <TrackRecent />
   </div>
 </template>
 
@@ -30,5 +18,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

@@ -1,46 +1,57 @@
 <template>
   <div
-    class="track-normal rounded h-100"
+    class="col-2"
     @mouseenter="hover = !hover"
     @mouseleave="hover = !hover"
+    v-show="display"
   >
-    <div class="track-img img-fluid">
-      <img
-        src="https://i.scdn.co/image/ab6761610000e5eb9896fc9a2e28384f2d705c45"
-        alt="test"
-        class="rounded"
-      />
-      <div class="btn-pp" v-show="hover">
-        <IconPlayGreen />
+    <div class="p-3 track-normal rounded text-truncate">
+      <div class="icon-x" @click="display = !display">
+        <IconX />
       </div>
+      <div class="track-img img-fluid">
+        <img
+          src="https://i.scdn.co/image/ab6761610000e5eb9896fc9a2e28384f2d705c45"
+          alt="test"
+          class="rounded"
+          draggable="false"
+        />
+        <div class="btn-pp" v-show="hover">
+          <IconPlayGreen />
+        </div>
+      </div>
+      <h6 class="pb-1">Track Name</h6>
+      <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eaque
+        ipsam corrupti facere quibusdam consectetur cupiditate ratione a ipsa,
+        vel nesciunt saepe, officiis aliquam et iusto ullam veritatis rerum
+        nulla!
+      </span>
     </div>
-    <h6 class="pb-1">Track Name</h6>
-    <Span>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eaque ipsam
-      corrupti facere quibusdam consectetur cupiditate ratione a ipsa, vel
-      nesciunt saepe, officiis aliquam et iusto ullam veritatis rerum nulla!
-    </Span>
   </div>
 </template>
 
 <script>
 import IconPlayGreen from "../icons/IconPlayGreen.vue";
+import IconX from "../icons/IconX.vue";
 export default {
   name: "TrackNormal",
   data() {
     return {
+      display: true,
       hover: false,
     };
   },
-  components: { IconPlayGreen },
+  components: { IconPlayGreen, IconX },
 };
 </script>
 
 <style scoped>
 .track-normal {
-  padding: 16px;
   background: #181818;
   color: var(--text-nomal-color);
+  position: relative;
+  width: 100%;
 }
 .track-normal:hover {
   background: #282828;
@@ -54,5 +65,14 @@ export default {
 .track-img {
   position: relative;
   margin-bottom: 16px;
+}
+.icon-x {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 2;
+  border-radius: 50%;
 }
 </style>

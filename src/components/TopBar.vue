@@ -43,6 +43,8 @@ export default {
 .nav-btn {
   display: flex;
   gap: 16px;
+  align-items: center;
+  height: 40px;
 }
 .content-wrapper {
   flex-grow: 1;

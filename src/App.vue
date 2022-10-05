@@ -1,14 +1,14 @@
 <template>
   <div class="main">
     <SideNav @navigate="navigate" />
-    <div class="content">
+    <div class="content p-0">
       <TopBar>
         <HeaderHome v-if="currentView == 'HomePage'" />
         <HeaderSearch v-else-if="currentView == 'SearchPage'" />
         <HeaderLibrary v-else-if="currentView == 'LibraryPage'" />
       </TopBar>
-      <div class="container-fluid pt-4 px-lg-4 px-sm-3 col gy-4">
-        <component :is="currentView"></component>
+      <div class="container-fluid p-0">
+        <component :is="currentView" class=""></component>
       </div>
     </div>
     <MusicPlayer />
@@ -25,6 +25,7 @@ import HeaderSearch from "./components/topbar/HeaderSearch.vue";
 import SearchPage from "./pages/SearchPage.vue";
 import HeaderLibrary from "./components/topbar/HeaderLibrary.vue";
 import LibraryPage from "./pages/LibraryPage.vue";
+import PlaylistPage from "./pages/PlaylistPage.vue";
 
 export default {
   name: "App",
@@ -43,6 +44,7 @@ export default {
     SearchPage,
     HeaderLibrary,
     LibraryPage,
+    PlaylistPage,
   },
   methods: {
     navigate(value) {
@@ -84,6 +86,7 @@ ul {
   min-height: 100%;
   position: fixed;
   min-width: 100%;
+  max-width: 100%;
 }
 .content {
   flex-grow: 1;
@@ -107,13 +110,9 @@ h6 {
   color: var(--hover-color);
   margin: 0 0 !important;
 }
-img {
-  width: 100%;
-  height: 100%;
-}
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -122,10 +121,10 @@ img {
 
 ::-webkit-scrollbar-thumb {
   height: 10%;
-  background: #888;
+  background: #5a5a5a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: hsla(0, 0%, 100%, 0.7);
 }
 </style>

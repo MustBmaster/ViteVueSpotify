@@ -1,5 +1,5 @@
 <template>
-  <div class="home-page gy-4">
+  <div class="home-page gy-4 pt-4 px-lg-4 px-sm-3">
     <SectionHead />
     <SectionNormal>
       <TrackNormal></TrackNormal>

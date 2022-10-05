@@ -5,7 +5,7 @@
     @mouseleave="hover = !hover"
     v-show="display"
   >
-    <div class="p-3 track-normal rounded text-truncate">
+    <div class="p-3 track-normal rounded">
       <div class="icon-x" @click="display = !display">
         <IconX />
       </div>
@@ -21,7 +21,7 @@
         </div>
       </div>
       <h6 class="pb-1">Track Name</h6>
-      <span>
+      <span class="text-elipsis">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eaque
         ipsam corrupti facere quibusdam consectetur cupiditate ratione a ipsa,
         vel nesciunt saepe, officiis aliquam et iusto ullam veritatis rerum
@@ -53,6 +53,13 @@ export default {
   position: relative;
   width: 100%;
 }
+.text-elipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: justify;
+}
 .track-normal:hover {
   background: #282828;
 }
@@ -74,5 +81,9 @@ export default {
   top: 8px;
   z-index: 2;
   border-radius: 50%;
+}
+img {
+  width: 100%;
+  aspect-ratio: 1/1;
 }
 </style>

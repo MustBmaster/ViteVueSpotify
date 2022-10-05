@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pt-4 px-lg-4 px-sm-3 gy-4">
     <LibraryPlaylistPage />
   </div>
 </template>

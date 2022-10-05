@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .liked-song {
   background: linear-gradient(149.46deg, #450af5, #8e8ee5 99.16%);
   padding: 20px;
@@ -46,6 +46,10 @@ export default {
 }
 .text-elipsis {
   width: 100%;
-  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: justify;
 }
 </style>

@@ -31,7 +31,7 @@ export default {
   name: "App",
   data() {
     return {
-      currentView: "HomePage",
+      currentView: "PlaylistPage",
     };
   },
   components: {
@@ -93,6 +93,7 @@ ul {
   background-color: var(--page-theme);
   overflow-y: scroll;
   margin-bottom: 90px;
+  position: relative;
 }
 hr {
   height: 1px;

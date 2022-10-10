@@ -43,6 +43,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  justify-content: flex-end;
 }
 .text-elipsis {
   width: 100%;

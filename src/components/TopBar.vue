@@ -35,9 +35,10 @@ export default {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  background: var(--page-theme);
+  /* background: var(--page-theme); */
+  background: transparent;
   z-index: 10;
-  position: sticky;
+  position: absolute;
   top: 0;
 }
 .nav-btn {

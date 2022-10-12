@@ -19,13 +19,13 @@
 import MusicPlayer from "./components/MusicPlayer.vue";
 import SideNav from "./components/SideNav.vue";
 import TopBar from "./components/TopBar.vue";
-import HomePage from "./pages/HomePage.vue";
+import HomePage from "./views/HomePage.vue";
 import HeaderHome from "./components/topbar/HeaderHome.vue";
 import HeaderSearch from "./components/topbar/HeaderSearch.vue";
-import SearchPage from "./pages/SearchPage.vue";
+import SearchPage from "./views/SearchPage.vue";
 import HeaderLibrary from "./components/topbar/HeaderLibrary.vue";
-import LibraryPage from "./pages/LibraryPage.vue";
-import PlaylistPage from "./pages/PlaylistPage.vue";
+import LibraryPage from "./views/LibraryPage.vue";
+import PlaylistPage from "./views/PlaylistPage.vue";
 
 export default {
   name: "App",

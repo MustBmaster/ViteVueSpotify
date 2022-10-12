@@ -32,6 +32,7 @@ import IconAddPlayList from "./icons/IconAddPlayList.vue";
 import PlayList from "./sidenav/PlayList.vue";
 import IconFavorite from "./icons/IconFavorite.vue";
 import IconDownload from "./icons/IconDownload.vue";
+import Resizeable from "re-resizable";
 export default {
   name: "SideNav",
   data() {
@@ -61,7 +62,7 @@ export default {
   padding-top: 24px;
   height: 100%;
   width: 230px;
-  min-width: 230px;
+  min-width: 300px;
   background-color: #000000;
   display: flex;
   flex-direction: column;
@@ -84,5 +85,15 @@ img {
 
 .user-related {
   margin-top: 24px;
+}
+.Resizable {
+  padding-top: 24px;
+  height: 100%;
+  width: 230px;
+  min-width: 300px;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 90px;
 }
 </style>

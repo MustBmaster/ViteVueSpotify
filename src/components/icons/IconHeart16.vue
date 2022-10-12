@@ -1,7 +1,7 @@
 <template>
   <svg
-    width="32"
-    height="32"
+    width="16"
+    height="16"
     viewBox="0 0 16 16"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -12,12 +12,17 @@
         fill="currentColor"
       />
     </g>
+    <defs>
+      <clipPath id="clip0_558_6952">
+        <rect width="16" height="16" fill="currentColor" />
+      </clipPath>
+    </defs>
   </svg>
 </template>
 
 <script>
 export default {
-  name: "IconTest",
+  name: "IconHeart16",
 };
 </script>
 

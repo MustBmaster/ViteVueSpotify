@@ -38,7 +38,7 @@ export default {
   /* background: var(--page-theme); */
   background: transparent;
   z-index: 10;
-  position: absolute;
+  position: sticky;
   top: 0;
 }
 .nav-btn {

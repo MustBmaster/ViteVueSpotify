@@ -24,19 +24,22 @@
 </template>
 
 <script>
-import IconHome from "./icons/IconHome.vue";
-import IconLibrary from "./icons/IconLibrary.vue";
-import IconSearch from "./icons/IconSearch.vue";
-import NavItem from "./sidenav/NavItem.vue";
-import IconAddPlayList from "./icons/IconAddPlayList.vue";
-import PlayList from "./sidenav/PlayList.vue";
-import IconFavorite from "./icons/IconFavorite.vue";
-import IconDownload from "./icons/IconDownload.vue";
-import Resizeable from "re-resizable";
+import IconHome from "../components/icons/IconHome.vue";
+import IconLibrary from "../components/icons/IconLibrary.vue";
+import IconSearch from "../components/icons/IconSearch.vue";
+import NavItem from "../components/sidenav/NavItem.vue";
+import IconAddPlayList from "../components/icons/IconAddPlayList.vue";
+import PlayList from "../components/sidenav/PlayList.vue";
+import IconFavorite from "../components/icons/IconFavorite.vue";
+import IconDownload from "../components/icons/IconDownload.vue";
 export default {
   name: "SideNav",
   data() {
     return {
+      resize: {
+        width: 200,
+        height: "100%",
+      },
       links: [
         { id: "HomePage", name: "Home", icon: "IconHome" },
         { id: "SearchPage", name: "Search", icon: "IconSearch" },
@@ -85,15 +88,5 @@ img {
 
 .user-related {
   margin-top: 24px;
-}
-.Resizable {
-  padding-top: 24px;
-  height: 100%;
-  width: 230px;
-  min-width: 300px;
-  background-color: #000000;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 90px;
 }
 </style>

@@ -3,7 +3,6 @@
     <div class="playlist-header">
       <div class="header-content p-4 h-100">
         <img
-          class="ml-"
           src="https://i.scdn.co/image/ab6761610000e5eb9896fc9a2e28384f2d705c45"
           alt="t"
         />
@@ -18,21 +17,54 @@
     <div class="p-4 playlist-function">
       <IconPlayGreen />
       <IconHeart32 />
-      <Icon3Dot />
+      <!-- <Icon3Dot /> -->
     </div>
     <div class="px-4">
-      <table class="table">
+      <table class="table table-borderless">
         <thead>
           <tr>
             <th scope="col" class="col">#</th>
             <th scope="col" class="col-4">TITLE</th>
             <th scope="col" class="col-4">ALBUM</th>
             <th scope="col" class="col-3">DATE ADDED</th>
-            <th scope="col" class="col"><IconClock /></th>
+            <th scope="col" class="col" style="min-width: 32px"></th>
+            <th scope="col" class="col text-center"><IconClock /></th>
+            <th scope="col" class="col" style="min-width: 32px"></th>
           </tr>
         </thead>
         <tbody>
-          <tr></tr>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
+          <PlaylistRow></PlaylistRow>
         </tbody>
       </table>
     </div>
@@ -42,12 +74,13 @@
 <script>
 import IconPlayGreen from "@/components/icons/IconPlayGreen.vue";
 import IconHeart32 from "@/components/icons/IconHeart32.vue";
-import Icon3Dot from "@/components/icons/Icon3Dot.vue";
+// import Icon3Dot from "@/components/icons/Icon3Dot.vue";
 import IconClock from "@/components/icons/IconClock.vue";
+import PlaylistRow from "@/components/common/PlaylistRow.vue";
 
 export default {
   name: "PlaylistPage",
-  components: { IconPlayGreen, IconHeart32, Icon3Dot, IconClock },
+  components: { IconPlayGreen, IconHeart32, IconClock, PlaylistRow },
   data() {
     return {};
   },
@@ -106,10 +139,14 @@ img {
   color: var(--hover-color);
 }
 .table {
-  color: white;
+  color: var(--text-normal-color);
+  /* color: white; */
 }
 thead {
   position: sticky;
+  z-index: 5;
+  top: 72px;
+  background: var(--page-theme);
 }
 </style>
 

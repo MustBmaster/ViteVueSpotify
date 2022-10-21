@@ -13,7 +13,7 @@ export default {};
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: var(--text-nomal-color);
+  color: var(--text-normal-color);
 }
 .btn-upgrade {
   box-sizing: border-box;

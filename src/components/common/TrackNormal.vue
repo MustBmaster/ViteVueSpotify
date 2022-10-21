@@ -49,7 +49,7 @@ export default {
 <style scoped>
 .track-normal {
   background: #181818;
-  color: var(--text-nomal-color);
+  color: var(--text-normal-color);
   position: relative;
   width: 100%;
 }

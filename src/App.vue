@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import MusicPlayer from "./components/MusicPlayer.vue";
-import SideNav from "./components/SideNav.vue";
-import TopBar from "./components/TopBar.vue";
+import MusicPlayer from "./layout/MusicPlayer.vue";
+import SideNav from "./layout/SideNav.vue";
+import TopBar from "./layout/TopBar.vue";
 import HomePage from "./views/HomePage.vue";
 import HeaderHome from "./components/topbar/HeaderHome.vue";
 import HeaderSearch from "./components/topbar/HeaderSearch.vue";
@@ -68,7 +68,7 @@ export default {
   --hover-color: white;
   --theme-active-color: #1ed760;
   --page-theme: #121212;
-  --text-nomal-color: #b3b3b3;
+  --text-normal-color: #b3b3b3;
 }
 ol,
 ul {
@@ -79,6 +79,7 @@ ul {
 #app {
   background-color: black;
 }
+
 .main {
   display: flex;
   flex-direction: row;

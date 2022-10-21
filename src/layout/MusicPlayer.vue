@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import MusicController from "./musicplayer/MusicController.vue";
-import PlayingTrack from "./musicplayer/PlayingTrack.vue";
-import SideController from "./musicplayer/SideController.vue";
+import MusicController from "../components/musicplayer/MusicController.vue";
+import PlayingTrack from "../components/musicplayer/PlayingTrack.vue";
+import SideController from "../components/musicplayer/SideController.vue";
 import { tracks } from "../track";
 
 export default {

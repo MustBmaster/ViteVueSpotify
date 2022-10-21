@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import NavButton from "./topbar/ButtonNav.vue";
-import IconNextPage from "./icons/IconNextPage.vue";
-import IconPrevPage from "./icons/IconPrevPage.vue";
-import ButtonUserSetting from "./topbar/ButtonUserSetting.vue";
+import NavButton from "../components/topbar/ButtonNav.vue";
+import IconNextPage from "../components/icons/IconNextPage.vue";
+import IconPrevPage from "../components/icons/IconPrevPage.vue";
+import ButtonUserSetting from "../components/topbar/ButtonUserSetting.vue";
 export default {
   name: "TopBar",
   props: {
@@ -35,8 +35,8 @@ export default {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  /* background: var(--page-theme); */
-  background: transparent;
+  background: var(--page-theme);
+  /* background: transparent; */
   z-index: 10;
   position: sticky;
   top: 0;

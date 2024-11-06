@@ -1,7 +1,5 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import getters from "./getters";
-Vue.use(Vuex);
+import { createStore } from "vuex";
+import getters from "./getter";
 
 //import các module của store động
 const modulesFiles = import.meta.glob("./modules/*.js");
@@ -14,7 +12,7 @@ for (const path in modulesFiles) {
 }
 
 //khai báo store, nhặt ra các getter và module sử dụng
-const store = new Vuex.Store({
+const store = createStore({
 	modules,
 	getters,
 });

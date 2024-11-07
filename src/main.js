@@ -1,11 +1,12 @@
-import { createApp } from 'vue'
-// import './style.css'
-import App from './App.vue'
-import store from './store'
+import { createApp } from "vue";
+import "@styles/index.scss";
+import App from "./App.vue";
+import store from "./store";
+import router from "./router";
+import vuetify from "./libs/vuetify";
+const app = createApp(App);
 
-
-const app = createApp(App)
-
-app.use(store)
-
-app.mount('#app')
+app.use(store);
+app.use(router);
+app.use(vuetify);
+app.mount("#app");

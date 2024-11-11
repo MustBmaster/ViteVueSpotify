@@ -2,17 +2,17 @@ import { createRouter, createWebHistory } from "vue-router";
 
 //các route
 export const constantRoutes = [
-	// {
-	// 	path: "/",
-	// 	name: "Home",
-	// 	component: () => import("@view/Home.vue"),
-	// 	meta: { title: "Home" },
-	// },
+	{
+		path: "/home",
+		name: "Home",
+		component: () => import("@views/HomePage.vue"),
+		meta: { title: "Home" },
+	},
 	{
 		path: "/login",
 		name: "Login",
 		component: () => import("@views/LoginPage.vue"),
-		meta: { title: "Home" },
+		meta: { title: "Login" },
 	},
 ];
 
@@ -21,5 +21,10 @@ const router = createRouter({
 	scrollBehavior: () => ({ y: 0 }),
 	routes: constantRoutes,
 });
+
+export function resetRouter() {
+	const newRouter = createRouter();
+	router.matcher = newRouter.matcher; // reset router
+}
 
 export default router;

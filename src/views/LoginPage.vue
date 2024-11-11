@@ -17,7 +17,7 @@
 					class="logo"
 				/>
 				<h1 class="login-title">Login to start listening</h1>
-				<v-btn rounded="xl" size="large" class="btn-spotify">Click to login</v-btn>
+				<v-btn rounded="xl" size="large" class="btn-spotify" @click="login">Click to login</v-btn>
 			</div>
 		</div>
 	</div>
@@ -27,11 +27,15 @@
 export default {
 	name: "LoginPage",
 	data() {
-		return {};
+		return {
+			clientId: import.meta.env.VITE_APP_CLIENT_ID,
+			redirectUrl: import.meta.env.VITE_REDIRECT_URL,
+		};
 	},
 	methods: {
 		login() {
-			window.location.href = `https://accounts.spotify.com/authorize?client_id=${process.env.APP_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}&response_type=token&show_dialog=true`;
+			// Sử dụng trực tiếp `this.clientId` và `this.redirectUrl` từ `data`
+			window.location.href = `https://accounts.spotify.com/authorize?client_id=${this.clientId}&redirect_uri=${this.redirectUrl}&response_type=token&show_dialog=true`;
 		},
 	},
 };
